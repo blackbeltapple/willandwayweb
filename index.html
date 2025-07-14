@@ -238,49 +238,11 @@
 
     <script>
         document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+
+            // Let Netlify handle the form submission naturally
+            // The form will redirect to a thank you page or show Netlify's default success message
+            // You can customize this by adding a custom thank you page
             
-            const emailInput = document.getElementById('emailInput');
-            const submitBtn = document.getElementById('submitBtn');
-            const successMessage = document.getElementById('successMessage');
-            const errorMessage = document.getElementById('errorMessage');
-            
-            // Hide previous messages
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
-            
-            // Basic email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (!emailRegex.test(emailInput.value)) {
-                errorMessage.style.display = 'block';
-                return;
-            }
-            
-            // Simulate form submission
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Subscribing...';
-            
-            // In a real implementation, you would send this to your email service
-            setTimeout(() => {
-                // Store email in localStorage for demo purposes
-                // In reality, this would go to your newsletter service
-                const subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]');
-                subscribers.push({
-                    email: emailInput.value,
-                    timestamp: new Date().toISOString()
-                });
-                localStorage.setItem('subscribers', JSON.stringify(subscribers));
-                
-                // Show success message
-                successMessage.style.display = 'block';
-                emailInput.value = '';
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Join Our Newsletter';
-                
-                // Optional: Log to console for demo
-                console.log('Newsletter subscription:', emailInput.value);
-            }, 1000);
         });
         
         // Simple form validation on input
