@@ -149,3 +149,8 @@ footer h3 { font-size: 1.3rem; margin-bottom: 4px; }
 .specs h2 { font-size: 1.2rem; margin-bottom: 12px; }
 .specs ul { padding-left: 1.2em; color: var(--muted); }
 .specs li { margin-bottom: 6px; }
+
+/* Contact page waving GIF */
+.wave { max-width: 380px; width: 100%; justify-self: center; text-align: center; }
+.split .wave img { aspect-ratio: 1 / 1; object-fit: cover; }
+.wave figcaption { margin-top: 12px; color: var(--muted); }
