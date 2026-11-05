@@ -5,7 +5,7 @@ const IMG_ROOT = "/images/collections/";
 const EXTENSIONS = ["jpg", "jpeg"];
 const MAX_IMAGES = 100;
 
-// Try to load image number n for a collection; resolves to its URL or null.
+// Try to load an image (a number, or "cover") for a collection; resolves to its URL or null.
 function findImage(slug, n) {
   return new Promise(resolve => {
     let i = 0;
@@ -36,6 +36,11 @@ async function findAllImages(slug) {
   return found;
 }
 
+// The cover photo is cover.jpg; if there isn't one yet, fall back to 1.jpg.
+async function findCover(slug) {
+  return (await findImage(slug, "cover")) || (await findImage(slug, 1));
+}
+
 function el(tag, attrs = {}, text) {
   const e = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
@@ -52,7 +57,7 @@ function buildPortfolio() {
     const frame = el("div", { class: "square" });
     card.append(frame, el("h3", {}, c.name), el("p", {}, c.summary));
     grid.append(card);
-    findImage(c.slug, 1).then(url => {
+    findCover(c.slug).then(url => {
       if (url) frame.append(el("img", { src: url, alt: `${c.name} collection`, loading: "lazy" }));
     });
   });
@@ -79,6 +84,11 @@ async function buildCollection() {
   document.getElementById("collection-name").textContent = c.name;
   const desc = document.getElementById("collection-description");
   c.description.forEach(p => desc.append(el("p", {}, p)));
+  if (c.specs && c.specs.length) {
+    const specs = document.getElementById("collection-specs");
+    c.specs.forEach(s => specs.querySelector("ul").append(el("li", {}, s)));
+    specs.hidden = false;
+  }
 
   // Previous / next collection links
   const prev = COLLECTIONS[(index - 1 + COLLECTIONS.length) % COLLECTIONS.length];
@@ -90,7 +100,9 @@ async function buildCollection() {
 
   // Gallery
   const gallery = document.getElementById("gallery");
-  const images = await findAllImages(c.slug);
+  // cover.jpg first, then numbered photos newest (highest number) first
+  const [cover, numbered] = await Promise.all([findImage(c.slug, "cover"), findAllImages(c.slug)]);
+  const images = (cover ? [cover] : []).concat(numbered.reverse());
   if (!images.length) {
     gallery.append(el("p", { class: "small" }, "Photos coming soon."));
     return;
