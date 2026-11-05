@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact – will&amp;way ceramics</title>
+  <meta name="description" content="Get in touch with will&amp;way ceramics about commissions, Studio Box, orders or anything else.">
+  <meta property="og:title" content="contact – will&amp;way ceramics">
+  <meta property="og:image" content="https://willandway.co.uk/images/hero.jpeg">
+  <meta property="og:url" content="https://willandway.co.uk/contact">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="/" class="logo"><img src="/images/logo.png" alt="will&amp;way ceramics"></a>
+      <nav>
+        <ul class="nav">
+          <li><a href="/">home</a></li>
+          <li><a href="/portfolio">portfolio</a></li>
+          <li><a href="/studio-box">studio box</a></li>
+          <li><a href="/about">about</a></li>
+          <li><a href="/contact" aria-current="page">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap split">
+        <div>
+          <h1>get in touch</h1>
+          <p>Questions about a piece, a commission, or Studio Box? Send me a message and I'll get back to you as soon as I can.</p>
+
+          <form name="contact" method="POST" action="/message-sent" netlify netlify-honeypot="bot-field" class="form">
+            <input type="hidden" name="subject" value="New enquiry from willandway.co.uk">
+            <p class="hidden"><label>Leave this empty: <input name="bot-field"></label></p>
+            <label>
+              Name
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label>
+              What's it about?
+              <select name="enquiry-type">
+                <option>General enquiry</option>
+                <option>Studio Box</option>
+                <option>Commission</option>
+                <option>An existing order</option>
+                <option>Something else</option>
+              </select>
+            </label>
+            <label>
+              Message
+              <textarea name="message" required></textarea>
+            </label>
+            <button type="submit" class="btn solid">send message</button>
+          </form>
+
+          <p>Or email me directly at <a href="mailto:hello@willandway.co.uk">hello@willandway.co.uk</a></p>
+          <p>Follow along on Instagram <a href="https://www.instagram.com/willandwayceramics/">@willandwayceramics</a></p>
+        </div>
+        <img src="/images/contact.jpeg" alt="will&amp;way ceramics in the studio" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <h3>will&amp;way</h3>
+      <p>Minimal, tactile forms designed for everyday rituals</p>
+      <div class="social">
+        <a href="https://www.instagram.com/willandwayceramics/">Instagram</a>
+        <a href="https://willandwayceramics.etsy.com/">Etsy</a>
+      </div>
+      <p class="small">© 2026 will&amp;way ceramics. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
