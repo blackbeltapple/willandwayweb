@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mailing list – will&amp;way ceramics</title>
+  <meta name="description" content="Join the will&amp;way ceramics mailing list to hear first about new shop drops and studio news.">
+  <meta property="og:title" content="mailing list – will&amp;way ceramics">
+  <meta property="og:image" content="https://willandway.co.uk/images/hero.jpeg">
+  <meta property="og:url" content="https://willandway.co.uk/newsletter">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="/" class="logo"><img src="/images/logo.png" alt="will&amp;way ceramics"></a>
+      <nav>
+        <ul class="nav">
+          <li><a href="/">home</a></li>
+          <li><a href="/portfolio">portfolio</a></li>
+          <li><a href="/studio-box">studio box</a></li>
+          <li><a href="/about">about</a></li>
+          <li><a href="/contact">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap split">
+        <div>
+          <h1>mailing list</h1>
+          <p>I'd love to keep you updated on my latest pottery creations.</p>
+          <p>Sign up below to be the first to know when new pieces are ready to find their home, hear about upcoming collections, and get the occasional glimpse into what's happening in the studio. No spam, just clay.</p>
+
+          <form name="newsletter" method="POST" action="/thank-you" netlify netlify-honeypot="bot-field" class="form">
+            <p class="hidden"><label>Leave this empty: <input name="bot-field"></label></p>
+            <label>
+              First name
+              <input type="text" name="first-name" autocomplete="given-name" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <button type="submit" class="btn solid">sign up</button>
+            <p class="small">You can unsubscribe at any time.</p>
+          </form>
+
+          <p>Follow my journey on Instagram <a href="https://www.instagram.com/willandwayceramics/">@willandwayceramics</a></p>
+        </div>
+        <img src="/images/newsletter.jpeg" alt="will&amp;way ceramics in the studio" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <h3>will&amp;way</h3>
+      <p>Minimal, tactile forms designed for everyday rituals</p>
+      <div class="social">
+        <a href="https://www.instagram.com/willandwayceramics/">Instagram</a>
+        <a href="https://willandwayceramics.etsy.com/">Etsy</a>
+      </div>
+      <p class="small">© 2026 will&amp;way ceramics. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

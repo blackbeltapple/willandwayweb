@@ -54,10 +54,17 @@ section { padding: 72px 0; }
 .hero { text-align: center; padding-top: 24px; }
 .hero h1 { margin-bottom: 32px; }
 .hero img { width: 100%; max-height: 640px; object-fit: cover; }
+.hero .split { text-align: left; }
 .statement { max-width: 640px; margin: 40px auto 0; font-size: 1.25rem; }
+.hero .centre .statement { margin-top: 0; }
 
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .split img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+
+/* Values list (about page) */
+.values { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; text-align: left; margin-top: 12px; }
+.values dt { font-weight: 400; font-size: 1.15rem; margin-bottom: 6px; text-transform: lowercase; }
+.values dd { color: var(--muted); }
 
 /* Buttons */
 .buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
@@ -67,11 +74,39 @@ section { padding: 72px 0; }
   border: 1px solid var(--text);
   text-decoration: none;
   letter-spacing: 0.08em;
+  font: inherit;
+  cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
 .btn:hover { background: var(--text); color: var(--bg); }
 .btn.solid { background: var(--text); color: var(--bg); }
 .btn.solid:hover { background: transparent; color: var(--text); }
+
+/* Forms */
+.form { display: grid; gap: 18px; max-width: 420px; margin: 32px 0; }
+.form label { display: grid; gap: 6px; font-size: 0.95rem; }
+.form input, .form textarea, .form select {
+  font: inherit;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 12px 14px;
+  width: 100%;
+}
+.form select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text) 50%), linear-gradient(135deg, var(--text) 50%, transparent 50%);
+  background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+}
+.form input:focus, .form textarea:focus, .form select:focus { outline: none; border-color: var(--text); }
+.form textarea { min-height: 140px; resize: vertical; }
+.form .btn { justify-self: start; }
+.form .small { margin: 0; }
+.hidden { display: none; }
 
 /* Footer */
 footer { border-top: 1px solid var(--line); padding: 48px 0; text-align: center; }
@@ -83,4 +118,5 @@ footer h3 { font-size: 1.3rem; margin-bottom: 4px; }
 @media (max-width: 760px) {
   section { padding: 48px 0; }
   .split { grid-template-columns: 1fr; gap: 32px; }
+  .values { grid-template-columns: 1fr; }
 }
