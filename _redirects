@@ -2,3 +2,17 @@
 /store/*                     /    301
 /studio-box                  /    301
 /frequently-asked-questions  /    301
+
+# Old Ceramic Pages collection addresses → new ones
+/portfolio/vases       /portfolio/haze          301
+/portfolio/mugs        /portfolio/double-denim  301
+/portfolio/rust-new    /portfolio/ember         301
+/portfolio/crayon      /portfolio/prism         301
+/portfolio/cioccolato  /portfolio/treacle       301
+/portfolio/puddle      /portfolio/heath         301
+/portfolio/wabi-sabi   /portfolio/kirinuki      301
+/portfolio/sods        /portfolio/studio        301
+/portfolio/copper      /portfolio/verdigris     301
+
+# Every collection page uses the same template (keep this line last)
+/portfolio/:slug       /collection.html         200
