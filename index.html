@@ -1,228 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will & Way Ceramics - Coming Soon</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f0f0;
-        }
-        
-        .container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .content {
-            max-width: 600px;
-            text-align: center;
-            background: white;
-            padding: 60px 40px;
-            border-radius: 8px;
-        }
-        
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: #4A2C17;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-        
-        .tagline {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 40px;
-            font-style: italic;
-        }
-        
-        .main-message {
-            font-size: 1.8rem;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-        
-        .description {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 40px;
-            line-height: 1.7;
-        }
-        
-        .newsletter-section {
-            background: #f8f8f8;
-            padding: 30px;
-            border-radius: 6px;
-            margin-bottom: 40px;
-        }
-        
-        .newsletter-title {
-            font-size: 1.3rem;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        
-        .newsletter-text {
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 25px;
-        }
-        
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        .newsletter-form p {
-            margin: 0;
-        }
-        
-        .email-input {
-            padding: 12px 16px;
-            border: 2px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .email-input:focus {
-            outline: none;
-            border-color: #4A2C17;
-        }
-        
-        .submit-btn {
-            padding: 12px 24px;
-            background: #4A2C17;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .submit-btn:hover {
-            background: #3A1F11;
-        }
-        
-        .submit-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-        
-        .contact-info {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 30px;
-        }
-        
-        .contact-info a {
-            color: #4A2C17;
-            text-decoration: none;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-
-        
-        @media (max-width: 600px) {
-            .content {
-                padding: 40px 25px;
-            }
-            
-            .logo {
-                font-size: 2rem;
-            }
-            
-            .main-message {
-                font-size: 1.5rem;
-            }
-            
-            .newsletter-form {
-                max-width: 100%;
-            }
-        }
-        
-        /* Simple fade-in animation */
-        .content {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>will&amp;way ceramics – handcrafted pottery with purpose</title>
+  <meta name="description" content="Hand-built pottery and sculptural forms, made in small batches in Stockport. Handcrafted ceramics with purpose.">
+  <meta property="og:title" content="will&amp;way ceramics">
+  <meta property="og:description" content="Hand-built pottery and sculptural forms, made in small batches in Stockport.">
+  <meta property="og:image" content="https://willandway.co.uk/images/hero.jpeg">
+  <meta property="og:url" content="https://willandway.co.uk/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <h1 class="logo">Will & Way Ceramics</h1>
-            <p class="tagline">Handcrafted pottery with purpose</p>
-            
-            <h2 class="main-message">Coming Soon</h2>
-            <p class="description">
-                We're putting the finishing touches on our new website and preparing to share our passion for ceramics with you. 
-                Each piece we create is thoughtfully designed and lovingly crafted by hand in our garden studio in Stockport.
-            </p>
-            
-            <div class="newsletter-section">
-                <h3 class="newsletter-title">Stay Updated</h3>
-                <p class="newsletter-text">
-                    Be the first to know when we launch, plus receive updates on new collections, 
-                    pottery workshops, and special offers.
-                </p>
-                
-                <form name="newsletter" netlify>
-                    <p>
-                        <input 
-                            type="email" 
-                            class="email-input" 
-                            placeholder="Enter your email address" 
-                            required
-                            name="email"
-                        />
-                    </p>
-                    <p>
-                        <button type="submit" class="submit-btn">
-                            Join Our Newsletter
-                        </button>
-                    </p>
-                </form>
-            </div>
-            
-            <div class="contact-info">
-                <p>Questions? Get in touch: <a href="mailto:hello@willandway.co.uk">hello@willandway.co.uk</a></p>
-            </div>
-        </div>
-    </div>
 
-    <script>
-        // Simple fade-in animation only
-        // All form handling is done by Netlify
-    </script>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="/" class="logo"><img src="/images/logo.png" alt="will&amp;way ceramics"></a>
+      <nav>
+        <ul class="nav">
+          <li><a href="/" aria-current="page">home</a></li>
+          <li><a href="/portfolio">portfolio</a></li>
+          <li><a href="/studio-box">studio box</a></li>
+          <li><a href="/about">about</a></li>
+          <li><a href="/contact">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>handcrafted pottery with purpose</h1>
+        <img src="/images/hero.jpeg" alt="Hand-built ceramic pieces by will&amp;way">
+        <p class="statement">Hand-built pottery and sculptural forms. Geometric lines, textured surfaces, muted tones. Made slowly, made to last.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="wrap split">
+        <div>
+          <h2>about will&amp;way</h2>
+          <p>I'm Amanda, the maker behind will&amp;way ceramics.</p>
+          <p>After years as a software engineer, I made a decision: to leave a long-standing career and build something with my hands instead of code.</p>
+          <p>will&amp;way represents that determination—the will to create, and the way I'm making it happen. This isn't a hobby that got out of hand. It's a deliberate choice to work with clay, to make objects that exist in the physical world, and to build a practice around slow, considered making.</p>
+          <p><a href="/about">Read more…</a></p>
+        </div>
+        <img src="/images/studio.jpeg" alt="The will&amp;way garden studio" loading="lazy">
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap centre">
+        <h2>objects for daily use and quiet moments</h2>
+        <p>From serving bowls and nested plates to sculptural vases, every piece is made in small batches.</p>
+        <p>I release new work through shop drops – so once a batch is gone, it's gone. Be the first to know when new work is available in my Etsy shop by joining my mailing list.</p>
+        <div class="buttons">
+          <a href="/newsletter" class="btn solid">join the mailing list</a>
+          <a href="https://www.etsy.com/uk/shop/willandwayceramics" class="btn">visit the shop</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Fewer, better things</p>
+          <h2>why handmade matters</h2>
+          <p>In a world of mass production, handmade ceramics invite you to slow down. To notice the weight of a mug, the curve of a vase, the quiet details that only exist because they were shaped by hand.</p>
+          <p>My pieces are made to be lived with – used, held, and cherished.</p>
+        </div>
+        <img src="/images/handmade.jpeg" alt="Handmade will&amp;way ceramics in use" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <h3>will&amp;way</h3>
+      <p>Minimal, tactile forms designed for everyday rituals</p>
+      <div class="social">
+        <a href="https://www.instagram.com/willandwayceramics/">Instagram</a>
+        <a href="https://willandwayceramics.etsy.com/">Etsy</a>
+      </div>
+      <p class="small">© 2026 will&amp;way ceramics. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
